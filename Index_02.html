@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<head>
+<title> -- TEST -- </title>
+
+<meta></meta>
+<style type="text/css">
+
+#main {
+ height:100%;
+ margin: 10 auto;
+ padding: 50px;
+ border: 1;
+ outline: 0;
+ font-family: 'Lucida Grande', Helvetica, Arial;
+ /* font-size: 100%; */
+ text-align: center;
+}
+
+.pictureContainer {
+	border: 2px solid #CCCCCC;
+	width: 190px;
+	background-color: #1F1F1F;
+}
+
+.theImage {
+	border: 1px solid #FFCCFF;
+	background-position: center;
+}
+
+.summer {
+    font-size: 54px;
+    color: #f3e30b;
+    background-color: #041f40;
+    padding: 30px;
+ }
+
+ .footer {
+    color: #f3e30b;
+    background-color: #000000;
+    padding: 15px;
+ }
+
+</style>
+</head>
+
+<body>
+<div><h2> MAIN ARTICLE TITLE! </h2></div>
+
+<!-- MAIN CONTENT HERE -->
+
+<div id="main">
+    <div class="pictureContainer">
+        <img class="theImage" src="1.png" height="150" width="150" />
+    </div>
+    <div class="pictureContainer">
+        <img class="theImage" src="2.png" height="150" width="150" />
+    </div>
+    <div class="pictureContainer">
+        <img class="theImage" src="3.png" height="150" width="150" />
+    </div>
+    <div class="pictureContainer">
+        <img class="theImage" src="4.png" height="150" width="150" />
+    </div>
+</div>
+
+<script>
+
+let id_selector = document.querySelector("#main");
+let class_selector = document.querySelector(".pictureContainer");
+let get_all_class_selectors = document.querySelectorAll(".pictureContainer");
+
+// elements selecting by class attribute == "theImage";
+
+// let get_all_Image_src = document.querySelectorAll(".theImage");
+// OR elements selecting by TAG == "img";
+// let get_all_Image_src = document.querySelectorAll("img");
+
+// OR by getEllementByClassName("theImage") <00 here we don't need . ;
+let get_all_Image_src = document.getElementsByClassName("theImage");
+
+for (let i=0; i<get_all_class_selectors.length; i++) {
+    let pics = get_all_class_selectors[i];
+
+    // here is possible because pictureContainer count is == theImage count
+    let images = get_all_Image_src[i];
+    console.log(pics.innerHTML);
+    console.log(`Линк към картинка ${i} е: ` + images.getAttribute("src"));
+    }
+    
+</script>
+
+<div>
+<script>
+let dt = new Date();
+let tm = dt.getHours();
+let month_ = (dt.getMonth() + 1);
+
+month_=3;
+
+        if (tm < 10) {
+            if (((month_) > 5) && ((month_) <= 8)) {
+                document.write("<br>Good morning, we are still in Summer</br>");
+            }
+            else {
+                document.write("<br>Good morning, Summer is comming </br>");
+            }
+        }
+        else   // tm > 10;
+        {
+            if (((month_) > 5) && ((month_) <= 8)) {
+                document.write("<p class=\"summer\"> Good day, we are still in Summer </p>");
+            }
+            else   // month < 5 OR month > 8;
+            {
+                document.write("<br>Good day, Summer will comming</br>");
+            }
+        }
+</script>
+    <div>
+        <br></br>
+        <h2 class="footer">STATIC - Not created from JS</h2>
+    </div>
+</div>
+</body>
+</html>
