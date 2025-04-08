@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="utf-8">
+ <script>
+    document.writeln("<script>")
+    document.writeln("<title>" + ttl_name + "</title>");
+    document.writeln("</script>");
+ </script>
+ 
+<style type="text/css">
+html, body {
+ height:100%;
+ width: 380px auto;
+ margin: 7 auto;
+ padding: 17px;
+ border: 1;
+ outline: 0;
+ font-family: Arial, Verdana;
+ font-size: 100%;
+	vertical-align: baseline;
+	align-self: left;
+}
+
+div {
+	background: #d0f0d0;
+	margin: 4 auto;
+	width: 320px;
+	padding: 20px;
+	text-align: center;
+	/* border-radius */
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	/* box-shadow */
+	-webkit-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+	-moz-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+	box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+}
+
+p {
+	background: #f0f0f0;
+	margin: 4 auto;
+	padding: 5px;
+}
+
+h4 {
+	font-family: Tahoma, Verdana;
+	color: #069F06;
+	margin: 15px;
+	padding: 5px;
+}
+
+ul {
+	font-family: Tahoma, Verdana;
+	font-size: 12px;
+	text-decoration: none;
+	width: 150px;
+	padding: 0px;
+	margin: 0px;
+}
+
+ul li:nth-of-type(even) {
+	background-color: #A4BBFF;
+    color: #003366;
+	background-repeat: no-repeat;
+} 
+
+/* ul li:nth-child(n + 4) {
+	background-color: #A4BBFF;
+    color: #111111;
+	background-repeat: no-repeat;
+}  */
+</style>
+
+</head>
+
+<body>
+ <h2> TEST MY SCRIPT1 </h2>
+ <br></br>
+    <div>
+	   <script>
+	   
+	    document.writeln( "<h4> scripting MATH.RAND </h4>" );
+
+		let key = (Math.floor(100-(1 + Math.random() * 100)));
+	    // document.writeln( "<br>" );
+		document.writeln( "<h4> " + key + " </h4>" );
+		document.writeln("<marquee> ANOTHER TEST_" + key +"</marquee>");
+		
+		function Func_2(posit) {
+		// write directly in rendered HTML document
+		//	;
+		} 
+		</script>
+    </div>
+	<br></br>
+	
+  <div>
+	<script>
+	  let count = 1;
+	 do {
+		// Do something;	
+		count++;
+		}
+	  while (count < 3);
+	  
+ /**
+ * Shuffle Array.
+ * @this {Array}
+ * @returns {Array}  Масив с разбъркани (shuffled) елементи.
+ */
+ Array.prototype.shuffle = function () {
+  let input = this;
+  for (let i = input.length - 1; i >= 0; i--) {
+	// генерираме случайно число от ?? до броя на елементите в масива
+    let randomIndex = Math.floor(Math.random() * (i + 1));
+	// New_Arr[RAND] = Arr[i]
+    let itemAtIndex = input[randomIndex];
+    
+	input[randomIndex] = input[i];
+    input[i] = itemAtIndex;	
+  }
+  return input;
+ }
+ </script>
+ </div>
+</body>
+</html>
